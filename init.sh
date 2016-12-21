@@ -1,6 +1,7 @@
 #!/bin/bash
 #installs
 sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install python
 sudo apt-get install apache2
 sudo service apache2 stop
