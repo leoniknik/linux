@@ -23,5 +23,6 @@ sudo chmod -R 777 script.sh
 sudo cp list ~/
 sudo cp script.sh ~/
 crontab ~/list
-
+sudo service nginx start
+sudo service apache2 restart
 
