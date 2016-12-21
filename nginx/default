@@ -1,0 +1,22 @@
+server {
+	listen *:80;
+	server_name _;
+	access_log /var/log/nginx/access.log;
+	# Перенаправление на back-end
+	location / {
+		proxy_pass http://localhost:8080;
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Real-Port $remote_port;
+		proxy_set_header X-Ngx-Version $nginx_version;
+		proxy_connect_timeout 120;
+		proxy_send_timeout 120;
+		proxy_read_timeout 180;
+	}
+	#static
+	location ~* \.(jpg|jpeg|gif|png|ico|css|bmp|swf|js|html|txt)$ {
+	root /var/www/html;
+	}
+}
+
+
