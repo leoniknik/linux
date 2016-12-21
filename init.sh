@@ -1,13 +1,15 @@
 #!/bin/bash
 #installs
 sudo apt-get update
-sudo apt-get upgrade
+#sudo apt-get upgrade
 sudo apt-get install python
 sudo apt-get install apache2
 sudo service apache2 stop
 sudo apt-get install libapache2-mod-python
+sudo service apache2 stop
 sudo apt-get install nginx
 sudo service nginx stop
+sudo service apache2 stop
 sudo apt-get install sysstat
 #apache2
 sudo rm /etc/apache2/apache2.conf
